@@ -14,7 +14,7 @@
   <body>
 
   <div class="container-fluid">
-    <div class="card text-center">
+    <div class="card text-center mt-4 mb-4">
     <div class="card-header">
         Sistem penilaian
     </div>
