@@ -21,7 +21,7 @@
     <div class="card-body">
         <h3 class="card-title">Form Nilai Siswa</h3>
         <hr>
-        <form method="POST" action="">
+        <form method="POST" action="hasil.php">
             <div class="form-group row">
                 <label for="nama" class="col-4 col-form-label">Nama Lengkap</label> 
                 <div class="col-8">
@@ -73,106 +73,6 @@
     
     <hr>
 
-    <h3>Data Nilai</h3>
-
-    <div class="container-fluid">
-    <table class="table" border="2">
-        <thead>
-            <tr>
-            <th scope="col">NO</th>
-            <th scope="col">Nama</th>
-            <th scope="col">Matkul</th>
-            <th scope="col">UTS</th>
-            <th scope="col">UAS</th>
-            <th scope="col">Tugas</th>
-            <th scope="col">Nilai Akhir</th>
-            </tr>
-        </thead>
-        <tbody>
-
-        <?php if(isset($_POST['submit'])  && isset($_POST['tugas']))  : ?>
-    
-
-            <?php
-            $nama = $_POST['nama'];
-            $matkul = $_POST['matkul'];
-            $uts = $_POST['uts'];
-            $uas = $_POST['uas'];
-            $tugas = $_POST['tugas'];
-
-            $percen30 = 30;
-            $percen35 = 35;
-
-            $uts30 = ($percen30 / 100) * $uts;
-            $uas35 = ($percen35 / 100) * $uas;
-            $tugas35 = ($percen35 / 100) * $tugas;
-
-            $totalnilai = $uts30 + $uas35 + $tugas35;
-
-
-     
-            $nomor=1;
-            ?>
-
-                <tr>
-                    <td><?=$nomor?> </td>
-                    <td><?= $nama?></td>
-                    <td><?= $matkul?></td>
-                    <td><?= $uts?></td>
-                    <td><?= $uas?></td>
-                    <td><?= $tugas?></td>
-                    <td><?= number_format($totalnilai,2,',','.')?></td>
-                    
-                </tr>
-
-            <?php
-            $nomor++;
-            ?>
-         
-
-        </tbody>
-        </table>
-
-        <table border="2" class="table" style="width:30%">
-  <thead>
-    <tr>
-      <th scope="col">Keterangan</th>
-      <th scope="col">Grade</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-        <?php
-         
-         if ($totalnilai >= 55) {
-            echo "<td>Lulus</td>";
-        }
-        else {
-            
-            echo "<td>Tidak Lulus</td>";
-        }
-
-        if ($totalnilai >= 0 && $totalnilai <= 35) {
-            echo "<td>E</td>";
-        }elseif ($totalnilai >= 36 && $totalnilai <= 55) {
-            echo "<td>D</td>";
-        }elseif ($totalnilai >= 56 && $totalnilai <= 69) {
-            echo "<td>C</td>";
-        }elseif ($totalnilai >= 70 && $totalnilai <= 84) {
-            echo "<td>B</td>";
-        }elseif ($totalnilai >= 85 && $totalnilai <= 100) {
-            echo "<td>A</td>";
-        }else {
-            echo "<td>I</td>";
-        }
-        
-        ?>
-           <?php endif ?>
-
-    </tr>
- 
-  </tbody>
-</table>
     </div>
     <div class="card-footer text-muted">
         Develop@AmruAzzam
