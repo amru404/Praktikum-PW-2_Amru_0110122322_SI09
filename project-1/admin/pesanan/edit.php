@@ -1,4 +1,5 @@
 <?php
+ob_start();
 // include database connection file
 include_once("../koneksi.php");
  
@@ -247,7 +248,7 @@ while($pesanan = mysqli_fetch_array($result))
                             <div class="form-group row">
                             <label for="alamat_pemesan" class="col-4 col-form-label">Alamat Pemesan</label>
                             <div class="col-8">
-                            <textarea class="form-control" id="alamat_pemesan"  name="alamat_pemesan" rows="3"><?= $alamat;?></textarea>
+                            <textarea class="form-control" required id="alamat_pemesan"  name="alamat_pemesan" rows="3"><?= $alamat;?></textarea>
                             </div>
                         </div>
 
@@ -258,7 +259,7 @@ while($pesanan = mysqli_fetch_array($result))
                                 <div class="input-group-prepend">
                                 </div>
                                 </div> 
-                                <input id="no_hp" name="no_hp" type="number" value=<?= $nohp;?> class="form-control">
+                                <input id="no_hp" name="no_hp" type="number" value=<?= $nohp;?> class="form-control" required>
                             </div>
                             </div>
 
@@ -269,7 +270,7 @@ while($pesanan = mysqli_fetch_array($result))
                                 <div class="input-group-prepend">
                                 </div>
                                 </div> 
-                                <input id="email" name="email" type="text" value=<?= $email;?> class="form-control">
+                                <input id="email" name="email" type="text" value=<?= $email;?> class="form-control" required>
                             </div>
                             </div>
 
@@ -280,14 +281,14 @@ while($pesanan = mysqli_fetch_array($result))
                                 <div class="input-group-prepend">
                                 </div>
                                 </div> 
-                                <input id="qty" name="qty" type="number" value=<?= $qty;?> class="form-control">
+                                <input id="qty" name="qty" type="number" value=<?= $qty;?> class="form-control" required>
                             </div>
                             </div>
 
                             <div class="form-group row">
                             <label for="deskripsi" class="col-4 col-form-label">Deskripsi</label>
                             <div class="col-8">
-                            <textarea class="form-control" id="deskripsi"  name="deskripsi" rows="3"><?= $deskripsi;?></textarea>
+                            <textarea class="form-control" required id="deskripsi"  name="deskripsi" rows="3"><?= $deskripsi;?></textarea>
                             </div>
                         </div>
 
@@ -317,7 +318,7 @@ while($pesanan = mysqli_fetch_array($result))
 
                         </div> 
                         
-                        <td><input type="hidden" name="id" value=<?= $_GET['id'];?>></td>
+                        <td><input type="hidden" name="id" value=<?= $_GET['id'];?>></td>   
                         <div class="form-group row">
                             <div class="offset-4 col-8">
                                 <button name="update" type="submit" value="Update" class="btn btn-primary">Submit</button>

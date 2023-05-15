@@ -1,4 +1,5 @@
 <?php
+ob_start();
 // Create database connection using config file
 include_once("../koneksi.php");
  
@@ -177,7 +178,7 @@ include_once("../koneksi.php");
                             <div class="input-group">
                                
                                 </div> 
-                                <input id="kode" name="kode" type="text" class="form-control">
+                                <input id="kode" name="kode" type="text" class="form-control" required>
                                 </div>
                             </div>
                      
@@ -188,7 +189,7 @@ include_once("../koneksi.php");
                             <div class="col-8">
                             <div class="input-group">
                                 </div> 
-                                <input id="nama" name="nama" type="text" class="form-control">
+                                <input id="nama" name="nama" type="text" class="form-control" required>
                             </div>
                             </div>
 
@@ -200,7 +201,7 @@ include_once("../koneksi.php");
                                 <div class="input-group-prepend">
                                 </div>
                                 </div> 
-                                <input id="harga_jual" name="harga_jual" type="number" class="form-control">
+                                <input id="harga_jual" name="harga_jual" type="number" class="form-control" required>
                             </div>
                             </div>
 
@@ -209,7 +210,7 @@ include_once("../koneksi.php");
                             <div class="col-8">
                             <div class="input-group">
                                 </div> 
-                                <input id="harga_beli" name="harga_beli" type="number" class="form-control">
+                                <input id="harga_beli" name="harga_beli" type="number" class="form-control" required>
                             </div>
                             </div>
 
@@ -218,7 +219,7 @@ include_once("../koneksi.php");
                             <div class="col-8">
                             <div class="input-group">
                                 </div> 
-                                <input id="stok" name="stok" type="number" class="form-control">
+                                <input id="stok" name="stok" type="number" class="form-control" required>
                             </div>
                             </div>
                         <div class="form-group row">
@@ -226,13 +227,13 @@ include_once("../koneksi.php");
                             <div class="col-8">
                             <div class="input-group">
                                 </div> 
-                                <input id="min_stok" name="min_stok" type="number" class="form-control">
+                                <input id="min_stok" name="min_stok" type="number" class="form-control" required>
                             </div>
                             </div>
                         <div class="form-group row">
                             <label for="deskripsi" class="col-4 col-form-label">Deskripsi</label>
                             <div class="col-8">
-                            <textarea class="form-control" id="deskripsi" name="deskripsi" rows="3"></textarea>
+                            <textarea class="form-control" required id="deskripsi" name="deskripsi" rows="3"></textarea>
                             </div>
                         </div>
                         <div class="form-group row">

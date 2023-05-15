@@ -1,4 +1,5 @@
 <?php
+ob_start();
 // include database connection file
 include_once("koneksi.php");
  
@@ -9,5 +10,5 @@ $id = $_GET['id'];
 $result = mysqli_query($mysqli, "DELETE FROM pesanan WHERE id=$id");
  
 // After delete redirect to Home, so that latest user list will be displayed.
-header("Location:checkout.php");
+header("Location:keranjang.php");
 ?>

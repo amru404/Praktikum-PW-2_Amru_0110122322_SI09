@@ -76,28 +76,6 @@ INSERT INTO `pesanan` (`id`, `tanggal`, `nama_pemesan`, `alamat_pemesan`, `no_hp
 (18, '2023-04-30', 'Ajam', 'Depok', '0340484', 'admin@admin.com', 4, '-', 1);
 
 --
--- Triggers `pesanan`
---
-DELIMITER $$
-CREATE TRIGGER `masuk` AFTER DELETE ON `pesanan` FOR EACH ROW BEGIN
-
-   UPDATE produk SET stok = stok + OLD.qty
-
-   WHERE id = OLD.produk_id;
-
-END
-$$
-DELIMITER ;
-DELIMITER $$
-CREATE TRIGGER `stok` AFTER INSERT ON `pesanan` FOR EACH ROW BEGIN
-
-   UPDATE produk SET stok = stok - NEW.qty
-
-   WHERE id = NEW.produk_id;
-
-END
-$$
-DELIMITER ;
 
 -- --------------------------------------------------------
 

@@ -1,4 +1,5 @@
 <?php
+ob_start();
 // Create database connection using config file
 include_once("../koneksi.php");
  
@@ -177,7 +178,7 @@ include_once("../koneksi.php");
                             <div class="input-group">
                                
                                 </div> 
-                                <input id="tanggal" name="tanggal" type="date" class="form-control">
+                                <input id="tanggal" name="tanggal"  required type="date" class="form-control">
                                 </div>
                             </div>
                      
@@ -188,7 +189,7 @@ include_once("../koneksi.php");
                             <div class="col-8">
                             <div class="input-group">
                                 </div> 
-                                <input id="nama_pemesan" name="nama_pemesan" type="text" class="form-control">
+                                <input id="nama_pemesan" name="nama_pemesan" required type="text" class="form-control">
                             </div>
                             </div>
 
@@ -200,14 +201,14 @@ include_once("../koneksi.php");
                                 <div class="input-group-prepend">
                                 </div>
                                 </div> 
-                                <input id="alamat_pemesan" name="alamat_pemesan" type="number" class="form-control">
+                                <input id="alamat_pemesan" name="alamat_pemesan" required type="number" class="form-control">
                             </div>
                             </div> -->
 
                             <div class="form-group row">
                             <label for="alamat_pemesan" class="col-4 col-form-label">Alamat</label>
                             <div class="col-8">
-                            <textarea class="form-control" id="alamat_pemesan" name="alamat_pemesan" rows="3"></textarea>
+                            <textarea class="form-control" id="alamat_pemesan" required name="alamat_pemesan" rows="3"></textarea>
                             </div>
                         </div>
 
@@ -216,7 +217,7 @@ include_once("../koneksi.php");
                             <div class="col-8">
                             <div class="input-group">
                                 </div> 
-                                <input id="no_hp" name="no_hp" type="number" class="form-control">
+                                <input id="no_hp" name="no_hp" required type="number" class="form-control">
                             </div>
                             </div>
 
@@ -225,7 +226,7 @@ include_once("../koneksi.php");
                             <div class="col-8">
                             <div class="input-group">
                                 </div> 
-                                <input id="email" name="email" type="email" class="form-control">
+                                <input id="email" name="email" required type="email" class="form-control">
                             </div>
                             </div>
                         <div class="form-group row">
@@ -233,13 +234,13 @@ include_once("../koneksi.php");
                             <div class="col-8">
                             <div class="input-group">
                                 </div> 
-                                <input id="qty" name="qty" type="number" class="form-control">
+                                <input id="qty" name="qty" required type="number" class="form-control">
                             </div>
                             </div>
                         <div class="form-group row">
                             <label for="deskripsi" class="col-4 col-form-label">Deskripsi</label>
                             <div class="col-8">
-                            <textarea class="form-control" id="deskripsi" name="deskripsi" rows="3"></textarea>
+                            <textarea class="form-control" required id="deskripsi" name="deskripsi" rows="3"></textarea>
                             </div>
                         </div>
                         <div class="form-group row">

@@ -1,4 +1,5 @@
 <?php
+ob_start();
 /**
  * using mysqli_connect for database connection
  */

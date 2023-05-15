@@ -1,4 +1,5 @@
 <?php
+ob_start();
 // Create database connection using config file
 include_once("../koneksi.php");
  

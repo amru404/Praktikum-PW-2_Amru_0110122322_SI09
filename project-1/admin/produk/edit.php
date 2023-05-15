@@ -1,4 +1,5 @@
 <?php
+ob_start();
 // include database connection file
 include_once("../koneksi.php");
  
@@ -217,7 +218,7 @@ while($produk = mysqli_fetch_array($result))
                                 <div class="input-group-prepend">
                                 </div>
                                 </div> 
-                                <input id="kode" name="kode" type="text" value=<?= $kode;?> class="form-control">
+                                <input id="kode" name="kode" type="text" value=<?= $kode;?> required class="form-control">
                             </div>
                             </div>
 
@@ -228,7 +229,7 @@ while($produk = mysqli_fetch_array($result))
                                 <div class="input-group-prepend">
                                 </div>
                                 </div> 
-                                <input id="nama" name="nama" type="text" value=<?= $nama;?> class="form-control">
+                                <input id="nama" name="nama" type="text" value=<?= $nama;?> required class="form-control">
                             </div>
                             </div>
 
@@ -239,7 +240,7 @@ while($produk = mysqli_fetch_array($result))
                                 <div class="input-group-prepend">
                                 </div>
                                 </div> 
-                                <input id="harga_jual" name="harga_jual" type="text" value=<?= $hargaJual;?> class="form-control">
+                                <input id="harga_jual" name="harga_jual" type="text" value=<?= $hargaJual;?> required class="form-control">
                             </div>
                             </div>
 
@@ -250,7 +251,7 @@ while($produk = mysqli_fetch_array($result))
                                 <div class="input-group-prepend">
                                 </div>
                                 </div> 
-                                <input id="harga_beli" name="harga_beli" type="text" value=<?= $hargaBeli;?> class="form-control">
+                                <input id="harga_beli" name="harga_beli" type="text" value=<?= $hargaBeli;?> required class="form-control">
                             </div>
                             </div>
 
@@ -261,7 +262,7 @@ while($produk = mysqli_fetch_array($result))
                                 <div class="input-group-prepend">
                                 </div>
                                 </div> 
-                                <input id="stok" name="stok" type="text" value=<?= $stok;?> class="form-control">
+                                <input id="stok" name="stok" type="text" value=<?= $stok;?> required class="form-control">
                             </div>
                             </div>
 
@@ -272,14 +273,14 @@ while($produk = mysqli_fetch_array($result))
                                 <div class="input-group-prepend">
                                 </div>
                                 </div> 
-                                <input id="min_stok" name="min_stok" type="text" value=<?= $minstok;?> class="form-control">
+                                <input id="min_stok" name="min_stok" type="text" value=<?= $minstok;?> required class="form-control">
                             </div>
                             </div>
 
                             <div class="form-group row">
                             <label for="deskripsi" class="col-4 col-form-label">Deskripsi</label>
                             <div class="col-8">
-                            <textarea class="form-control" id="deskripsi"  name="deskripsi" rows="3"><?= $deskripsi;?></textarea>
+                            <textarea required class="form-control" id="deskripsi"  name="deskripsi" rows="3"><?= $deskripsi;?></textarea>
                             </div>
                         </div>
 

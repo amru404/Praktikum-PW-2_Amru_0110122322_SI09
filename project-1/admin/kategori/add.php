@@ -1,4 +1,5 @@
 <?php
+ob_start();
 // Create database connection using config file
 include_once("../koneksi.php");
  
@@ -178,7 +179,7 @@ include_once("../koneksi.php");
                                 <div class="input-group-prepend">
                                 </div>
                                 </div> 
-                                <input id="nama" name="nama" type="text" class="form-control">
+                                <input id="nama" required name="nama" type="text" class="form-control">
                             </div>
                             </div>
                         </div> 
