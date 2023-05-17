@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FormController;
+use App\Http\Controllers\HasilController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +19,17 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/helo/{nama}/{alamat}', function ($nama,$alamat) {
+    return "<h2>hello : $nama, Dari : $alamat </h2>";
+});
+Route::get('/produk/{id}', function ($id) {
+    return view('index',['id'=>$id]);
+});
+
+
+Route::get('/form', [FormController::class, 'index']);
+Route::post('/coba', [HasilController::class, 'index']);
+Route::post('/hasil', [FormController::class, 'Cetak']);
+Route::get('/daftar', [FormController::class, 'daftar']);
+Route::post('/store', [FormController::class, 'store'])->name('user/store');
